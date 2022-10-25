@@ -1,3 +1,5 @@
+unalias y
+
 function y() {
   local outputFormat="%(upload_date)s - %(uploader)s - %(title)s [%(width)sx%(height)s %(fps)s][%(id)s].%(ext)s"
   local arcAlias="--download-archive done.txt"
