@@ -13,7 +13,7 @@ Adds 2 yt-dlp option aliases
 
 ### Installation
 
-* clone the repo to $ZSH_CUSTOM/plugins/
+* clone the repo to $ZSH_CUSTOM/plugins/yt-dlp
 
   `git clone https://github.com/clavelm/yt-dlp-omz-plugin.git $ZSH_CUSTOM/plugins/yt-dlp`
 
