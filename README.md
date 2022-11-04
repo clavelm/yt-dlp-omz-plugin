@@ -34,3 +34,14 @@ released version.
 
 * [Oh-My-Zsh](https://ohmyz.sh/)
 * [yt-dlp](https://github.com/yt-dlp/yt-dlp)
+
+### License
+
+The file _yt-dlp(_yt-dlp) comes from yt-dlp releases 
+([their “The Unlicense” license](https://github.com/yt-dlp/yt-dlp/blob/master/LICENSE)).
+
+This repo is under [“The Unlicense”](https://unlicense.org).\
+From what I know, in France, you can’t voluntarily unlicense a work to the public domain (it’s to prevent abuses). 
+But you also can’t license something that is not creative enough. The work from this repo falls clearly in the
+“no creativity” category.\
+So you can do what you want with it, if you want to put attribution you can, if you don’t you don’t have to. 
