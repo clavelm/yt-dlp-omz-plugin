@@ -6,3 +6,4 @@ function y() {
   local subAlias="--sub-lang 'en.*' --convert-subs srt --merge-output-format mkv --embed-subs"
   yt-dlp -o $outputFormat --alias arc $arcAlias --alias sub $subAlias "$@"
 }
+compdef y=yt-dlp
