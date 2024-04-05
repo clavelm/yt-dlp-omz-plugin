@@ -3,7 +3,7 @@ unalias y 2> /dev/null || true
 function y() {
   local outputFormat="%(upload_date)s - %(uploader)s - %(title)s [%(width)sx%(height)s %(fps)s][%(id)s].%(ext)s"
   local noArcAlias="--no-download-archive"
-  local subAlias="--sub-lang 'en.*,en-orig.*' --convert-subs srt --mkv --embed-subs --write-auto-subs"
+  local subAlias="--sub-langs all --convert-subs srt --mkv --embed-subs"
   local mkvAlias="--remux-video mkv"
   
   local defParam="-N 10 --download-archive done.txt --embed-chapters"
