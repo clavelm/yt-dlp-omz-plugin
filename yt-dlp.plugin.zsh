@@ -9,9 +9,10 @@ function y() {
   local defParam="-N 10 --download-archive done.txt --embed-chapters"
   
   if [[ -f "./yt.config.txt" ]]; then
-    yt-dlp -o $outputFormat --alias narc $noArcAlias --alias sub $subAlias --alias mkv $mkvAlias -N 10 --download-archive "done.txt" --embed-chapters --config-locations "./yt.config.txt"  "$@"
-  else
-    yt-dlp -o $outputFormat --alias narc $noArcAlias --alias sub $subAlias --alias mkv $mkvAlias -N 10 --download-archive "done.txt" --embed-chapters  "$@"
+    echo 'Renaming ./yt.config.txt to ./yt-dlp.conf'
+    mv './yt.config.txt' './yt-dlp.conf'
   fi
+
+  yt-dlp -o $outputFormat --alias narc $noArcAlias --alias sub $subAlias --alias mkv $mkvAlias -N 10 --download-archive "done.txt" --embed-chapters  "$@"
 }
 compdef y=yt-dlp
