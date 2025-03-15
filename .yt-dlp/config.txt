@@ -1,0 +1,19 @@
+# default settings
+-o "%(upload_date)s - %(uploader)s - %(title)s [%(width)sx%(height)s %(fps)s][%(display_id)s].%(ext)s"
+--embed-chapters
+
+# don’t download AV1 video format (from youtube)
+-f "bestvideo*[vcodec!*=av01]+bestaudio/best[vcodec!*=av01]"
+
+# archive file in download folder, and alias --narc to ignore it
+--download-archive "done.txt"
+--alias narc "--no-download-archive"
+
+# alias --mkv to remux to mkv
+--alias mkv "--remux-video mkv"
+
+# alias --sub to download all subs, remux to mkv, and embed them
+--alias sub "--sub-langs all --convert-subs srt --mkv --embed-subs --sleep-subtitles 5"
+
+# alias --10 to concurrent download
+--alias 10 "-N 10"

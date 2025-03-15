@@ -25,6 +25,10 @@ Adds 2 yt-dlp option aliases
 
   `omz reload`
 
+* copy .yt-dlp/ in the linux home folder
+
+  `cp -r .yt-dlp ~/.`
+
 ### Update completion file
 
 run ./update_completion.sh to update the completion file _yt-dlp to the latest
