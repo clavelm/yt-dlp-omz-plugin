@@ -17,3 +17,7 @@
 
 # alias --10 to concurrent download
 --alias 10 "-N 10"
+
+# load cookies
+--cookies ~/.yt-dlp/cookies.txt
+
