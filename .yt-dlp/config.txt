@@ -1,8 +1,9 @@
 # default settings
 -o "%(upload_date)s - %(uploader)s - %(title)s [%(width)sx%(height)s %(fps)s][%(display_id)s].%(ext)s"
 --embed-chapters
+--remux-video mp4>mkv
 
-# don’t download AV1 video format (from youtube)
+# don't download AV1 video format (from youtube)
 -f "bestvideo*[vcodec!*=av01]+bestaudio/best[vcodec!*=av01]"
 
 # archive file in download folder, and alias --narc to ignore it
@@ -10,10 +11,11 @@
 --alias narc "--no-download-archive"
 
 # alias --mkv to remux to mkv
---alias mkv "--remux-video mkv"
+--alias mkv "--remux-video webm>webm/mkv"
 
 # alias --sub to download all subs, remux to mkv, and embed them
---alias sub "--sub-langs all --convert-subs srt --mkv --embed-subs --sleep-subtitles 5"
+# conversion to srt is for mx player pro showing &nbsp; in vtt…
+--alias sub "--sub-langs all --convert-subs srt --remux-video mkv --embed-subs --sleep-subtitles 5"
 
 # alias --10 to concurrent download
 --alias 10 "-N 10"
@@ -21,3 +23,17 @@
 # load cookies
 --cookies ~/.yt-dlp/cookies.txt
 
+# PO token
+# https://github.com/yt-dlp/yt-dlp/wiki/PO-Token-Guide#no-account
+# 
+# 1. Open https://music.youtube.com/
+# 2. Open any video
+# 3. Open the developer console, then go to the "Network" tab
+# 4. Filter requests by googlevideo.com
+# 5. Click the video and play for a few seconds - requests to googlevideo.com should appear in the network tab
+# 6. From the most recent googlevideo.com request, extract the pot query parameter value from the URL
+# 7. Pass the PO Token for GVS to yt-dlp
+#
+--extractor-args "youtube:player-client=default,-tv,-web,mweb"
+--extractor-args "youtube:po_token=mweb.gvs+PO_TOKEN_VALUE_HERE"
+--extractor-args "youtube:po_token=mweb.subs+PO_TOKEN_VALUE_HERE"
